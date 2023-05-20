@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  background-color: aliceblue;
+}
+header {
+  margin: 20px auto;
+  font-size: 20px;
+  padding: 10px;
+  width: 800px;
+  font-weight: bold;
+  color: #fff;
+  background-color: royalblue;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 8px 8px 5px lightgray;
+}
+main {
+  margin: 30px auto;
+  width: 800px;
+  background-color: white !important;
+  padding: 30px;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 8px 8px 5px lightgray;
+}
+
+main #input-btn {
+  color: #fff;
+  padding: 5px 18px;
+  margin-left: 10px;
+  background-color: royalblue;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
