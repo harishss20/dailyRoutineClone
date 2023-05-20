@@ -42,3 +42,33 @@ main #input-btn {
   font-weight: bold;
   cursor: pointer;
 }
+#todo-container {
+  margin: 20px auto;
+  width: 800px;
+  background: #fff;
+  list-style: none;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 8px 8px 5px lightgray;
+}
+.todo-item {
+  border: 3px solid lightgray;
+  margin: 12px;
+  border-radius: 4px;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.todo-item:hover {
+  color: royalblue;
+  background: aliceblue;
+  font-weight: bold;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.fa {
+  color: black;
+  font-weight: bold;
+}

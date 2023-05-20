@@ -20,10 +20,21 @@
         />
         <button id="input-btn">Add</button>
       </div>
-      <div>
-        <div id="responses"></div>
-      </div>
     </main>
+    <ul id="todo-container" class="todo-container">
+      <li class="todo-item">
+        <div>Workout</div>
+        <div class="fa" onclick="removeFoodItem(event)">X</div>
+      </li>
+      <li class="todo-item">
+        <div>100 pushup</div>
+        <div class="fa" onclick="removeFoodItem(event)">X</div>
+      </li>
+      <li class="todo-item">
+        <div>breakfast</div>
+        <div class="fa" onclick="removeFoodItem(event)">X</div>
+      </li>
+    </ul>
   </body>
   <script src="main.js"></script>
 </html>
