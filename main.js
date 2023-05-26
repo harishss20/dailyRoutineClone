@@ -2,7 +2,8 @@ let inputList = document.getElementById("input-list");
 let inputBtn = document.getElementById("input-btn");
 let tempStore = document.getElementById("responses");
 let todoContainer = document.getElementById("todo-container");
-inputBtn.addEventListener("click", () => {
+let inputContainer = document.getElementById("input-container");
+let inputGetEl = () => {
   if (inputList.value === "") {
     alert("Please Type your daily routine List");
   } else {
@@ -23,8 +24,17 @@ inputBtn.addEventListener("click", () => {
     // to reset the input value
     inputList.value = "";
   }
-});
+};
+inputBtn.addEventListener("click", inputGetEl);
 function removeTodoItem(event) {
   let todoRemove = event.target.parentNode;
   todoRemove.remove();
 }
+
+inputContainer.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    inputGetEl();
+  } else if (event.key === "z" && (event.ctrlKey || event.metaKey)) {
+    inputContainer.value = "";
+  }
+});

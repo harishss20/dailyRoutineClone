@@ -31,6 +31,11 @@ main {
   border-radius: 6px;
   box-shadow: 8px 8px 5px lightgray;
 }
+main #input-list {
+  padding: 5px 10px;
+  font-weight: bold;
+  color: black;
+}
 
 main #input-btn {
   color: #fff;
