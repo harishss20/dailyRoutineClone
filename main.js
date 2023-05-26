@@ -25,12 +25,13 @@ let inputGetEl = () => {
     inputList.value = "";
   }
 };
+//remove the list
 inputBtn.addEventListener("click", inputGetEl);
 function removeTodoItem(event) {
   let todoRemove = event.target.parentNode;
   todoRemove.remove();
 }
-
+// enter key
 inputContainer.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
     inputGetEl();
