@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@1,500&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -36,7 +35,20 @@ main #input-list {
   font-weight: bold;
   color: black;
 }
-
+#input-container2 {
+  margin: 20px auto;
+  width: 800px;
+  background-color: white !important;
+  padding: 30px;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 8px 8px 5px lightgray;
+}
+#input-container2 img {
+  width: 350px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 main #input-btn {
   color: #fff;
   padding: 5px 18px;
@@ -47,27 +59,18 @@ main #input-btn {
   font-weight: bold;
   cursor: pointer;
 }
-#todo-container {
-  margin: 20px auto;
-  width: 800px;
-  background: #fff;
-  list-style: none;
-  padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 8px 8px 5px lightgray;
-}
 .todo-item {
   border: 3px solid lightgray;
   margin: 12px;
   border-radius: 4px;
   font-size: 17px;
   display: flex;
+  font-weight: bold;
   justify-content: space-between;
   padding: 5px 10px;
 }
 .todo-item:hover {
-  color: royalblue;
+  color: orangered;
   background: aliceblue;
   font-weight: bold;
   transition: all 0.25s;
@@ -75,5 +78,10 @@ main #input-btn {
 }
 .fa {
   color: black;
+  font-weight: bold;
+}
+.showList {
+  text-align: left;
+  font-size: 18px;
   font-weight: bold;
 }
