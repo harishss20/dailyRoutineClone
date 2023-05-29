@@ -12,6 +12,31 @@ const listNo = document.createElement("div");
 listNo.className = "showList";
 inputContainerSec.prepend(listNo);
 
+document.addEventListener("DOMContentLoaded", () => {
+  const getLocalData = [...JSON.parse(localStorage.getItem("todoLists"))];
+  getLocalData.forEach((list) => {
+    if (list.todoLists === "") {
+      console.log("type some thing");
+    } else {
+      //  creating new elements
+      const newList = document.createElement("li");
+      const div = document.createElement("div");
+      const divBtn = document.createElement("div");
+      // creating class for list and passing value to div
+      newList.className = "todo-item";
+      div.textContent = list.todoList;
+      newList.append(div, divBtn);
+      // set attribute for the divBtn and create a class
+      divBtn.setAttribute("onclick", "removeTodoItem(event)");
+      divBtn.className = "fa";
+      divBtn.innerHTML = `X`;
+      newList.append(divBtn);
+      todoContainer.append(newList);
+    }
+  });
+  addList();
+});
+
 //call back function for add button
 let inputGetEl = () => {
   if (inputList.value === "") {
@@ -31,10 +56,23 @@ let inputGetEl = () => {
     divBtn.innerHTML = `X`;
     newList.append(divBtn);
     todoContainer.append(newList);
-    // to reset the input value
-    inputList.value = "";
-    addList();
   }
+
+  // set localStorage
+  if (inputList.value != "") {
+    localStorage.setItem(
+      "todoLists",
+      JSON.stringify([
+        ...JSON.parse(localStorage.getItem("todoLists") || "[]"),
+        { todoList: inputList.value },
+      ])
+    );
+  }
+
+  // to reset the input value
+  inputList.value = "";
+
+  addList();
 };
 
 inputBtn.addEventListener("click", inputGetEl); //Event for add button
@@ -44,7 +82,20 @@ function removeTodoItem(event) {
   let todoRemove = event.target.parentNode;
   todoRemove.remove();
   addList();
+
+  //remove local storage
+  const getLocalData = [...JSON.parse(localStorage.getItem("todoLists"))];
+
+  getLocalData.forEach((list) => {
+    const addLocalStorage = list.todoList + "X";
+    if (addLocalStorage === todoRemove.innerText) {
+      getLocalData.splice(getLocalData.indexOf(list), 1);
+    }
+  });
+  //restore the localStorage of remove li
+  localStorage.setItem("todoLists", JSON.stringify(getLocalData));
 }
+
 // enter key for the input value
 inputContainer.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
